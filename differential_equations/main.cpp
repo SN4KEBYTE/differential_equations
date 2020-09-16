@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <locale>
 #include "grid.h"
 #include "solvers.h"
 
@@ -9,24 +10,31 @@ const double A = 0., B = 1., Y0 = 1.;
 
 double f(const double &t, const double &y)
 {
-   return 2 * t * y;
+    return 2 * t * y;
 }
 
 int main()
 {
-   double step = 0.1;
+    cout.imbue(locale(""));
 
-   int N = (B - A) / step;
-   auto g = build_grid(A, step, N);
+    double step = 0.025;
 
-   auto solution = simple_explicit_euler(g, f, 1.0, step, N);
+    int N = (B - A) / step;
+    auto g = build_grid(A, step, N);
 
-   for (const auto &el : solution)
-      cout << el << endl;
+    cout << "Total elements: " << N << endl;
 
-   cout << endl;
+    for (const auto &el : g)
+        cout << el << endl;
 
-   system("pause");
+    /*auto solution = simple_explicit_euler(g, f, 1.0, step, N);
 
-   return 0;
+    for (const auto &el : solution)
+       cout << el << endl;
+
+    cout << endl;*/
+
+    system("pause");
+
+    return 0;
 }
