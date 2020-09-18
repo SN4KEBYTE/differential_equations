@@ -17,7 +17,7 @@ vector<double> modified_euler(const vector<double> &grid, double(&f)(const doubl
     return vector<double>();
 }
 
-vector<double> improved_euler(const vector<double> &grid, double(&f)(const double &, const double &), const double &y0, const double &step, const int &N)
+vector<double> improved_euler(const vector<double> &grid, double(&f)(const double &, const double &), const double &z0, const double &step, const int &N)
 {
     vector<double> z(N + 1);
     z[0] = z0;
