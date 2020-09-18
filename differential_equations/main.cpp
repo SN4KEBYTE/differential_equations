@@ -33,6 +33,12 @@ int main()
        cout << el << endl;
 
     cout << endl;*/
+    
+    auto solution_3 = improved_euler(g, f, 1.0, step, N);
+    
+	for (const auto& el : solution_3)
+		cout << el << endl;
+	cout << endl;
 
     system("pause");
 
