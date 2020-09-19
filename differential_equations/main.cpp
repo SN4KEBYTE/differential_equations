@@ -27,10 +27,10 @@ int main()
     for (const auto &el : g)
         cout << el << endl;
 
-    /*auto solution = simple_explicit_euler(g, f, 1.0, step, N);
+    /*auto solution = modified_euler(g, f, 1.0, step, N);
 
-    for (const auto &el : solution)
-       cout << el << endl;
+    for (const auto& el : solution)
+        cout << el << endl;
 
     cout << endl;*/
     
