@@ -75,20 +75,17 @@ int main()
         auto y_ie = improved_euler(grid, f, Y0, steps[i], N);
 
         // dump results to files
-        for (size_t i = 0; i < TEST_NUM; i++)
-        {
-            auto end = "h" + to_string(steps[i]) + ".csv";
+        auto end = "h" + to_string(steps[i]) + ".csv";
 
-            ofstream out(SEE_DIR + end);
-            out.imbue(locale(""));
-            dump_table(out, grid, y_see, as);
+        ofstream out(SEE_DIR + end);
+        out.imbue(locale(""));
+        dump_table(out, grid, y_see, as);
 
-            out.open(ME_DIR + end);
-            dump_table(out, grid, y_me, as);
+        out.open(ME_DIR + end);
+        dump_table(out, grid, y_me, as);
 
-            out.open(IE_DIR + end);
-            dump_table(out, grid, y_ie, as);
-        }
+        out.open(IE_DIR + end);
+        dump_table(out, grid, y_ie, as);
     }
 
     cout << "DONE" << endl;
