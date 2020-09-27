@@ -4,8 +4,10 @@
 #include <limits>
 #include <locale>
 #include <direct.h>
-#include "grid.h"
+#include "../utils/grid.h"
 #include "solvers.h"
+#include "../utils/analytical.h"
+#include "../utils/excel.h"
 
 using namespace std;
 
@@ -24,26 +26,9 @@ double f(const double &t, const double &y)
     return 2 * t * y;
 }
 
-// calculate analytical solution for definite grid 
-vector<double> analytical_solution(const vector<double> &grid)
+double solution(const double &t)
 {
-    vector<double> as(grid.size());
-
-    for (size_t i = 0; i < as.size(); i++)
-        as[i] = exp(grid[i] * grid[i]);
-
-    return as;
-}
-
-// dump resulting table to Excel file
-void dump_table(ofstream &f, const vector<double> &grid, const vector<double> &ns, const vector<double> &as)
-{
-    f << "t;y_числ;y_аналит;|y_числ - y_аналит|\n";
-
-    for (size_t i = 0; i < grid.size(); i++)
-        f << grid[i] << ";" << ns[i] << ";" << as[i] << ";" << abs(ns[i] - as[i]) << "\n";
-
-    f.close();
+    return exp(t * t);
 }
 
 int main()
@@ -67,12 +52,12 @@ int main()
         // calculate number of segments, build grid and calculate analytical solution
         int N = (B - A) / steps[i];
         auto grid = build_grid(A, steps[i], N);
-        auto as = analytical_solution(grid);
+        auto as = analytical_solution(grid, solution);
 
         // calculate solution using all methods for current grid
-        auto y_see = simple_explicit_euler(grid, f, Y0, steps[i], N);
-        auto y_me = modified_euler(grid, f, Y0, steps[i], N);
-        auto y_ie = improved_euler(grid, f, Y0, steps[i], N);
+        auto y_see = simple(grid, f, Y0, steps[i], N);
+        auto y_me = modified(grid, f, Y0, steps[i], N);
+        auto y_ie = improved(grid, f, Y0, steps[i], N);
 
         // dump results to files
         auto end = "h" + to_string(steps[i]) + ".csv";

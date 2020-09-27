@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{8CC25694-C362-4D2E-B0C5-462E6544B621}</ProjectGuid>
-    <RootNamespace>differentialequations</RootNamespace>
+    <ProjectGuid>{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}</ProjectGuid>
+    <RootNamespace>utils</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,13 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="grid.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="solvers.cpp" />
+    <ClInclude Include="..\differential_equations\grid.h" />
+    <ClInclude Include="analytical.h" />
+    <ClInclude Include="excel.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="grid.h" />
-    <ClInclude Include="solvers.h" />
+    <ClCompile Include="..\differential_equations\grid.cpp" />
+    <ClCompile Include="analytical.cpp" />
+    <ClCompile Include="excel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

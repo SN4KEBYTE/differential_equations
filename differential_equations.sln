@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "differential_equations", "differential_equations\differential_equations.vcxproj", "{8CC25694-C362-4D2E-B0C5-462E6544B621}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utils", "utils\utils.vcxproj", "{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "euler_explicit", "euler_explicit\euler_explicit.vcxproj", "{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,22 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8CC25694-C362-4D2E-B0C5-462E6544B621}.Debug|x64.ActiveCfg = Debug|x64
-		{8CC25694-C362-4D2E-B0C5-462E6544B621}.Debug|x64.Build.0 = Debug|x64
-		{8CC25694-C362-4D2E-B0C5-462E6544B621}.Debug|x86.ActiveCfg = Debug|Win32
-		{8CC25694-C362-4D2E-B0C5-462E6544B621}.Debug|x86.Build.0 = Debug|Win32
-		{8CC25694-C362-4D2E-B0C5-462E6544B621}.Release|x64.ActiveCfg = Release|x64
-		{8CC25694-C362-4D2E-B0C5-462E6544B621}.Release|x64.Build.0 = Release|x64
-		{8CC25694-C362-4D2E-B0C5-462E6544B621}.Release|x86.ActiveCfg = Release|Win32
-		{8CC25694-C362-4D2E-B0C5-462E6544B621}.Release|x86.Build.0 = Release|Win32
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}.Debug|x64.ActiveCfg = Debug|x64
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}.Debug|x64.Build.0 = Debug|x64
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}.Debug|x86.ActiveCfg = Debug|Win32
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}.Debug|x86.Build.0 = Debug|Win32
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}.Release|x64.ActiveCfg = Release|x64
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}.Release|x64.Build.0 = Release|x64
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}.Release|x86.ActiveCfg = Release|Win32
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}.Release|x86.Build.0 = Release|Win32
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}.Debug|x64.ActiveCfg = Debug|x64
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}.Debug|x64.Build.0 = Debug|x64
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}.Debug|x86.ActiveCfg = Debug|Win32
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}.Debug|x86.Build.0 = Debug|Win32
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}.Release|x64.ActiveCfg = Release|x64
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}.Release|x64.Build.0 = Release|x64
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}.Release|x86.ActiveCfg = Release|Win32
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
