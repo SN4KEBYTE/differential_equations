@@ -18,7 +18,7 @@ vector<double> implicit(const vector<double> &grid, double(&f)(const double &, c
             y_prev = y_cur;
             y_cur = y[i - 1] + step * f(grid[i], y_prev);
             iter++;
-        } while (abs(y_cur - y_prev) >= eps || iter <= max_iter);
+        } while (abs(y_cur - y_prev) >= eps && iter <= max_iter);
 
         y[i] = y_cur;
     }
@@ -44,7 +44,7 @@ vector<double> trapeze(const vector<double> &grid, double(&f)(const double &, co
             y_prev = y_cur;
             y_cur = y[i - 1] + (step / 2) * (f(grid[i - 1], y[i - 1]) + f(grid[i], y_prev));
             iter++;
-        } while (abs(y_cur - y_prev) >= eps || iter <= max_iter);
+        } while (abs(y_cur - y_prev) >= eps && iter <= max_iter);
 
         y[i] = y_cur;
     }
