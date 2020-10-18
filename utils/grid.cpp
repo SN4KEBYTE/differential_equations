@@ -1,3 +1,4 @@
+// grid.cpp
 #include "grid.h"
 
 vector<double> build_grid(const double &a, const double &step, const int &N)

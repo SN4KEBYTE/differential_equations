@@ -6,15 +6,21 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utils", "utils\utils.vcxproj", "{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "euler_explicit", "euler_explicit\euler_explicit.vcxproj", "{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}"
-	ProjectSection(ProjectDependencies) = postProject
-		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C} = {2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "euler_implicit", "euler_implicit\euler_implicit.vcxproj", "{BB60BC55-5C69-4EB2-9037-808535CA24CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7} = {70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "runge_kutta", "runge_kutta\runge_kutta.vcxproj", "{C0D3799B-0A1A-4F85-AA17-EED4CA7FD346}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "runner", "test_runner\test_runner.vcxproj", "{E9C3E594-601D-4182-A76A-A1A1491C6D3E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BB60BC55-5C69-4EB2-9037-808535CA24CD} = {BB60BC55-5C69-4EB2-9037-808535CA24CD}
+		{C0D3799B-0A1A-4F85-AA17-EED4CA7FD346} = {C0D3799B-0A1A-4F85-AA17-EED4CA7FD346}
+		{2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C} = {2D35F6B4-EAE7-43DF-8248-6E4FE4F4727C}
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7} = {70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

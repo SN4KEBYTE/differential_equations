@@ -1,3 +1,4 @@
+// analytical.cpp
 #include "analytical.h"
 
 vector<double> analytical_solution(const vector<double> &grid, double(&f)(const double &))
