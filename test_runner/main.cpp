@@ -19,7 +19,7 @@ using namespace std;
 
 // for implicit methods
 const double EPS = 1e-14;
-const double MAX_ITER = 1000;
+const double MAX_ITER = 100000;
 
 #pragma endregion
 

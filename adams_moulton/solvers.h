@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "../runge_kutta/solvers.h"
+#include "../euler_explicit/solvers.h"
 
 using namespace std;
 

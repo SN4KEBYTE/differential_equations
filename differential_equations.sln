@@ -30,6 +30,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "adams_moulton", "adams_moulton\adams_moulton.vcxproj", "{BDBA5370-0895-4CEC-A9C3-9D16F29B0A07}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C0D3799B-0A1A-4F85-AA17-EED4CA7FD346} = {C0D3799B-0A1A-4F85-AA17-EED4CA7FD346}
+		{70189DF1-7DA8-4CF9-9D59-00B922E0EDE7} = {70189DF1-7DA8-4CF9-9D59-00B922E0EDE7}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prediction_correction", "prediction_correction\prediction_correction.vcxproj", "{64EF9729-8312-46CD-8314-3A5CC5733477}"
