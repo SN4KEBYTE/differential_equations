@@ -41,7 +41,8 @@ const string I_AM3_DIR = INITIAL_DIR + "adams_moulton3/";
 const string I_AM4_DIR = INITIAL_DIR + "adams_moulton4/";
 const string I_EU_EXP_DIR = INITIAL_DIR + "euler_explicit/";
 const string I_EU_IMP_DIR = INITIAL_DIR + "euler_implicit/";
-const string I_PC_DIR = INITIAL_DIR + "prediction_correction/";
+const string I_PC3_DIR = INITIAL_DIR + "prediction_correction3/";
+const string I_PC4_DIR = INITIAL_DIR + "prediction_correction4/";
 const string I_RK_DIR = INITIAL_DIR + "runge_kutta/";
 
 // function 
@@ -119,7 +120,8 @@ int main()
     _mkdir(I_AM4_DIR.c_str());
     _mkdir(I_EU_EXP_DIR.c_str());
     _mkdir(I_EU_IMP_DIR.c_str());
-    _mkdir(I_PC_DIR.c_str());
+    _mkdir(I_PC3_DIR.c_str());
+    _mkdir(I_PC4_DIR.c_str());
     _mkdir(I_RK_DIR.c_str());
 
     // create ofstream and set proper locale to write numbers with comma
@@ -162,9 +164,14 @@ int main()
         out.close();
 
         // prediction-correction
-        auto pc = prediction_correction(grid, i_f, I_Y0, rk[1], rk[2], I_STEPS[i], N);
-        out.open(I_PC_DIR + end);
-        dump_table(out, grid, pc, as);
+        auto pc3 = prediction_correction_3(grid, i_f, I_Y0, rk[1], rk[2], I_STEPS[i], N);
+        out.open(I_PC3_DIR + end);
+        dump_table(out, grid, pc3, as);
+        out.close();
+
+        auto pc4 = prediction_correction_4(grid, i_f, I_Y0, rk[1], rk[2], rk[3], I_STEPS[i], N);
+        out.open(I_PC4_DIR + end);
+        dump_table(out, grid, pc4, as);
         out.close();
 
         // implicit Euler
