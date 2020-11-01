@@ -34,7 +34,7 @@ vector<double> implicit(const vector<double> &grid, double(&f)(const double &, c
 vector<double> trapeze(const vector<double> &grid, double(&f)(const double &, const double &), double(&df)(const double &, const double &),
     const double &y0, const double &step, const int &N, const double &eps, const unsigned &max_iter)
 {
-    auto y0_sol = improved(grid, f, y0, step, N);
+    auto y0_sol = implicit(grid, f, df, y0, step, N, eps, max_iter);
     vector<double> y(N + 1);
     y[0] = y0;
 
