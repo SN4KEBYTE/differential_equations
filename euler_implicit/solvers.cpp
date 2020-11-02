@@ -11,15 +11,15 @@ vector<double> implicit(const vector<double> &grid, double(&f)(const double &, c
     for (size_t i = 1; i < y.size(); i++)
     {
         double y_prev = y0_sol[i];
-        double y_cur = y[i - 1] - (y[i - 1] + step * f(grid[i], y_prev) - y_prev) / (step * df(grid[i], y_prev) - 1);
+        double y_cur = y_prev - (y[i - 1] + step * f(grid[i], y_prev) - y_prev) / (step * df(grid[i], y_prev) - 1);
         double accuracy = abs(y_cur - y_prev);
         
-        unsigned iter = 0;
+        unsigned iter = 1;
 
         while (accuracy > eps && iter <= max_iter)
         {
             y_prev = y_cur;
-            y_cur = y[i - 1] - (y[i - 1] + step * f(grid[i], y_prev) - y_prev) / (step * df(grid[i], y_prev) - 1);
+            y_cur = y_prev - (y[i - 1] + step * f(grid[i], y_prev) - y_prev) / (step * df(grid[i], y_prev) - 1);
         
             accuracy = abs(y_cur - y_prev);
             iter++;
@@ -41,16 +41,16 @@ vector<double> trapeze(const vector<double> &grid, double(&f)(const double &, co
     for (size_t i = 1; i < y.size(); i++)
     {
         double y_prev = y0_sol[i];
-        double y_cur = y[i - 1] - (y[i - 1] + (step / 2) * (f(grid[i - 1], y[i - 1]) + f(grid[i], y_prev)) - y_prev) /
+        double y_cur = y_prev - (y[i - 1] + (step / 2) * (f(grid[i - 1], y[i - 1]) + f(grid[i], y_prev)) - y_prev) /
             ((step / 2) * df(grid[i], y_prev) - 1);
         double accuracy = abs(y_cur - y_prev);
         
-        unsigned iter = 0;
+        unsigned iter = 1;
 
         while (accuracy > eps && iter <= max_iter)
         {
             y_prev = y_cur;
-            y_cur = y[i - 1] - (y[i - 1] + (step / 2) * (f(grid[i - 1], y[i - 1]) + f(grid[i], y_prev)) - y_prev) /
+            y_cur = y_prev - (y[i - 1] + (step / 2) * (f(grid[i - 1], y[i - 1]) + f(grid[i], y_prev)) - y_prev) /
                 ((step / 2) * df(grid[i], y_prev) - 1);
 
             accuracy = abs(y_cur - y_prev);

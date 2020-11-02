@@ -12,16 +12,16 @@ vector<double> adams_moulton_3(const vector<double> &grid, double(&f)(const doub
     for (size_t i = 2; i < y.size(); i++)
     {
         double y_prev = y0_sol[i];
-        double y_cur = y[i - 1] - (y[i - 1] + (step / 12) * (5 * f(grid[i], y_prev) + 8 * f(grid[i - 1], y[i - 1]) - f(grid[i - 2], y[i - 2])) - y_prev) /
+        double y_cur = y_prev - (y[i - 1] + (step / 12) * (5 * f(grid[i], y_prev) + 8 * f(grid[i - 1], y[i - 1]) - f(grid[i - 2], y[i - 2])) - y_prev) /
             ((step / 12) * (5 * df(grid[i], y_prev)) - 1);
         double accuracy = abs(y_prev - y_cur);
 
-        unsigned iter = 0;
+        unsigned iter = 1;
 
         while (accuracy > eps && iter <= max_iter)
         {
             y_prev = y_cur;
-            y_cur = y[i - 1] - (y[i - 1] + (step / 12) * (5 * f(grid[i], y_prev) + 8 * f(grid[i - 1], y[i - 1]) - f(grid[i - 2], y[i - 2])) - y_prev) /
+            y_cur = y_prev - (y[i - 1] + (step / 12) * (5 * f(grid[i], y_prev) + 8 * f(grid[i - 1], y[i - 1]) - f(grid[i - 2], y[i - 2])) - y_prev) /
                 ((step / 12) * (5 * df(grid[i], y_prev)) - 1);
             
             accuracy = abs(y_prev - y_cur);
@@ -46,16 +46,16 @@ vector<double> adams_moulton_4(const vector<double> &grid, double(&f)(const doub
     for (size_t i = 3; i < y.size(); i++)
     {
         double y_prev = y0_sol[i];
-        double y_cur = y[i - 1] - (y[i - 1] + (step / 24) * (9 * f(grid[i], y_prev) + 19 * f(grid[i - 1], y[i - 1]) - 5 * f(grid[i - 2], y[i - 2]) + f(grid[i - 3], y[i - 3])) - y_prev) / 
+        double y_cur = y_prev - (y[i - 1] + (step / 24) * (9 * f(grid[i], y_prev) + 19 * f(grid[i - 1], y[i - 1]) - 5 * f(grid[i - 2], y[i - 2]) + f(grid[i - 3], y[i - 3])) - y_prev) /
             ((step / 24) * (9 * df(grid[i], y_prev)) - 1);
         double accuracy = abs(y_prev - y_cur);
 
-        unsigned iter = 0;
+        unsigned iter = 1;
 
         while (accuracy > eps && iter <= max_iter)
         {
             y_prev = y_cur;
-            y_cur = y[i - 1] - (y[i - 1] + (step / 24) * (9 * f(grid[i], y_prev) + 19 * f(grid[i - 1], y[i - 1]) - 5 * f(grid[i - 2], y[i - 2]) + f(grid[i - 3], y[i - 3])) - y_prev) /
+            y_cur = y_prev - (y[i - 1] + (step / 24) * (9 * f(grid[i], y_prev) + 19 * f(grid[i - 1], y[i - 1]) - 5 * f(grid[i - 2], y[i - 2]) + f(grid[i - 3], y[i - 3])) - y_prev) /
                 ((step / 24) * (9 * df(grid[i], y_prev)) - 1);
 
             accuracy = abs(y_prev - y_cur);
